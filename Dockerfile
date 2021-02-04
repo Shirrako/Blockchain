@@ -20,4 +20,4 @@ COPY settings-docker.xml /usr/share/maven/ref/
 
 ENTRYPOINT ["/usr/local/bin/mvn-entrypoint.sh"]
 CMD ["mvn"]
-© 2021 GitHub, Inc.
+
