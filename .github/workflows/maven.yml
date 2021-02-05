@@ -37,9 +37,11 @@ jobs:
 
     - name: Log in to DigitalOcean Container Registry with short-lived credentials
       run: doctl registry login --expiry-seconds 600  
+    - name: Pull Image
+      run : docker pull shirrako/blockchain-java:master-bb0096e registry.digitalocean.com/salzerblock/latest
     - name: Tag Image
-      run : docker tag master-4b3ec10 registry.digitalocean.com/salzerblock
+      run : docker tag master-bb0096e registry.digitalocean.com/salzerblock/latest 
     - name: Push image
-      run : docker push egistry.digitalocean.com/salzerblock
+      run : docker push registry.digitalocean.com/salzerblock/latest
     - name: Save DigitalOcean kubeconfig
       run: doctl kubernetes cluster kubeconfig save testing-cluster  
