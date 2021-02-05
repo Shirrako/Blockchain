@@ -29,3 +29,7 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Publish Image to Container Registry
+      uses: ripplr-io/docr-docker-publish@v1
+      with:
+        image_path: shirrako/blockchain-java
