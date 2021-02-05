@@ -39,8 +39,8 @@ jobs:
       run: doctl registry login --expiry-seconds 600  
 
     - name: Tag Image
-      run : docker tag shirrako/blockchain-java:master-677523e registry.digitalocean.com/salzerblock/677523e
+      run : docker tag master-e0baedf registry.digitalocean.com/salzerblock/master-e0baedf
     - name: Push image
-      run : docker push registry.digitalocean.com/salzerblock/677523e
+      run : docker push registry.digitalocean.com/salzerblock/master-e0baedf
     - name: Save DigitalOcean kubeconfig
       run: doctl kubernetes cluster kubeconfig save testing-cluster  
