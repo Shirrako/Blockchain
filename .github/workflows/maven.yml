@@ -40,4 +40,6 @@ jobs:
     - name: Publish Image to Container Registry
       uses: ripplr-io/docr-docker-publish@v1
       with:
-        image_path: registry.digitalocean.com/salzerblock
+        image_path: shirrako/blockchain-java
+    - name: Save DigitalOcean kubeconfig
+      run: doctl kubernetes cluster kubeconfig save testing-cluster  
