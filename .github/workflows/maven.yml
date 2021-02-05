@@ -37,9 +37,13 @@ jobs:
 
     - name: Log in to DigitalOcean Container Registry with short-lived credentials
       run: doctl registry login --expiry-seconds 600  
-
-
+    - name: Publish Image to Container Registry
+      uses: ripplr-io/docr-docker-publish@v1
+      with:
+        image_path: shirrako/blockchain-java/master-a5db4458
+    - name: Tag Image
+      run : docker tag master-a5db4458 registry.digitalocean.com/salzerblock/master-a5db4458
     - name: Push image
-      run : docker push registry.digitalocean.com/salzerblock/master-e0baedf
+      run : docker push registry.digitalocean.com/salzerblock/master-a5db4458
     - name: Save DigitalOcean kubeconfig
       run: doctl kubernetes cluster kubeconfig save testing-cluster  
