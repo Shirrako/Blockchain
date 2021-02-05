@@ -30,7 +30,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Install doctl
-      uses: ./
+      uses: digitalocean/action-doctl@v1.55
       with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
