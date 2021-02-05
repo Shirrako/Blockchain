@@ -39,8 +39,8 @@ jobs:
       run: doctl registry login --expiry-seconds 600  
 
     - name: Tag Image
-      run : docker tag master-49d44b8 registry.digitalocean.com/salzerblock/master-49d44b8
+      run : docker tag master-49d54f9d registry.digitalocean.com/salzerblock/master-49d54f9d
     - name: Push image
-      run : docker push registry.digitalocean.com/salzerblock/master-49d44b8
+      run : docker push registry.digitalocean.com/salzerblock/master-49d54f9d
     - name: Save DigitalOcean kubeconfig
       run: doctl kubernetes cluster kubeconfig save testing-cluster  
