@@ -29,12 +29,7 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-    - name: Stop 
-      run: service docker stop
-    - name: Clear
-      run: rm -rf /var/lib/docker
-    - name: Start
-      run: service docker start
+ 
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
       with:
