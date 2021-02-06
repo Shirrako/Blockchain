@@ -29,19 +29,3 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
- 
-    - name: Install doctl
-      uses: digitalocean/action-doctl@v2
-      with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
-
-    - name: Log in to DigitalOcean Container Registry with short-lived credentials
-      run: doctl registry login --expiry-seconds 600  
- 
-    - name: Tag Image
-      run : docker tag blockchain-java:master-dc31cef registry.digitalocean.com/salzerblock/latest
-    - name: Push image
-      run : docker push registry.digitalocean.com/salzerblock/latest
-    - name: Save DigitalOcean kubeconfig
-      run: doctl kubernetes cluster kubeconfig save testing-cluster  
