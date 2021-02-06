@@ -39,7 +39,7 @@ jobs:
       run: doctl registry login --expiry-seconds 600  
  
     - name: Tag Image
-      run : docker tag blockchain-java registry.digitalocean.com/salzerblock/latest
+      run : docker tag sha256:c7afb94964e567a9b74467ece5a01104af8f2d1a9efc31fc29c0b9b6e631b9b0 registry.digitalocean.com/salzerblock/latest
     - name: Push image
       run : docker push registry.digitalocean.com/salzerblock/latest
     - name: Save DigitalOcean kubeconfig
